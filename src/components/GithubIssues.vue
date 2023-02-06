@@ -23,7 +23,7 @@
       <v-row>
         <v-col cols="12">
           <v-progress-circular indeterminate color="primary" v-if="loading"></v-progress-circular>
-          <v-btn color="primary" v-if="temmais" @click="listaIssues">MAIS</v-btn>
+          <v-btn color="pink" v-if="temmais" @click="listaIssues">MAIS</v-btn>
         </v-col>
       </v-row>
     </div>

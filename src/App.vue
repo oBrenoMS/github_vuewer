@@ -2,37 +2,35 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="pink"
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt="GitHub Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="https://m.media-amazon.com/images/I/71VqUo6TkNL.png"
           transition="scale-transition"
           width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
         />
       </div>
 
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://github.com/oBrenoMS/github_vuewer"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Meu GitHub</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+            <v-btn
+        href="https://linkedin.com/"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Meu Linkedin</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
