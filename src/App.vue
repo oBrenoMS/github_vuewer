@@ -11,10 +11,11 @@
           contain
           src="https://m.media-amazon.com/images/I/71VqUo6TkNL.png"
           transition="scale-transition"
-          width="40"
+          width="60"
         />
       </div>
 
+        <h1 class="ml-1">GitHub Vuewer</h1>
       <v-spacer></v-spacer>
 
       <v-btn
@@ -23,14 +24,6 @@
         text
       >
         <span class="mr-2">Meu GitHub</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-            <v-btn
-        href="https://linkedin.com/"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Meu Linkedin</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
