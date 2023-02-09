@@ -24,7 +24,7 @@
                   <a :href="arquivo.html_url" target="_blank">link</a>
                     </td>
                   </tr>
-                <v-icon v-if="arquivos.length > 0" class="ml-4" @click="volta">mdi-arrow-left</v-icon>
+                <v-icon v-if="caminhoNovo.length > 0" class="ml-4" @click="volta">mdi-arrow-left</v-icon>
                 </tbody>
               </template>
           </v-simple-table>
@@ -53,8 +53,7 @@
             this.loading = false;
         },
           async listaArquivosDento(path){
-            console.log(this.arquivo)
-            console.log(this.issue)
+            console.log(this.arquivos)
             this.loading = true
             this.arquivos = await api.listaArquivosDento(this.repo.owner.login,
                 this.repo.name,
@@ -65,30 +64,29 @@
           },
         async volta(){
             this.caminhoNovo.pop()
-            if(this.caminhoNovo.length == 1){
-                let caminhoVelho = this.caminhoNovo[0]
-                console.log(caminhoVelho)
-            }   
-            else {
-                let caminhoVelho = ''
-                console.log(caminhoVelho)
+            if (this.caminhoNovo.length == 1) {
+              let caminhoVelho = this.caminhoNovo[0]
+              this.arquivos = await api.listaArquivosDento(this.repo.owner.login, this.repo.name, caminhoVelho)
+              this.caminhoAtual = caminhoVelho
+            } else {
+              let caminhoVelho = ''
+              this.arquivos = await api.listaArquivosDento(this.repo.owner.login, this.repo.name, caminhoVelho)
+              this.caminhoAtual = caminhoVelho
             }
-            this.arquivo = await api.listaArquivosDento(this.repo.owner.login, this.repo.name, this.caminhoVelho)
-            this.caminhoAtual = this.caminhoVelho
         },
       },
       watch: {
         repo(){
         this.issues = []
           this.arquivos = []
-          this.caminhoAtual = []
-          this.caminhoNovo = null
+          this.caminhoAtual = null
+          this.caminhoNovo = []
           if (this.repo) {
             this.listaArquivos()
           } else {
             this.arquivos = []
-            this.caminhoAtual = []
-            this.caminhoNovo = null
+            this.caminhoAtual = null
+            this.caminhoNovo = []
           }
         }
       }
